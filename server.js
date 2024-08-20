@@ -11,6 +11,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
 
+
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -27,7 +28,9 @@ app.post('/', (req, res) => {
     res.render('index', { timePST: timePST.format('dddd, h:mm A'), timeIST });
 });
 
-
+app.get('*', (req, res) => {
+    res.status(404).json({ message: "NOT FOUND" })
+});
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
