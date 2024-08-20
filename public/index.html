@@ -87,9 +87,18 @@
             </select>
             <label for="hour">Hour:</label>
             <select id="hour" name="hour" required>
-                <% for (let i = 1; i <= 12; i++) { %>
-                    <option value="<%= i %>"><%= i %></option>
-                <% } %>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
             </select>
             <label for="minute">Minute:</label>
             <select id="minute" name="minute" required>
@@ -108,97 +117,3 @@
     </div>
 </body>
 </html>
-
-
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Time Converter</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            color: #008080;
-            margin-bottom: 20px;
-        }
-        label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: inline-block;
-        }
-        select, input {
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #008080;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #005f5f;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Convert PST to IST</h1>
-        <form action="/convert" method="POST">
-            <label for="day">Day of the Week:</label>
-            <select id="day" name="day" required>
-                <option value="Sunday">Sunday</option>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-                <option value="Saturday">Saturday</option>
-            </select>
-            <label for="hour">Hour:</label>
-            <select id="hour" name="hour" required>
-                <% for (let i = 1; i <= 12; i++) { %>
-                    <option value="<%= i %>"><%= i %></option>
-                <% } %>
-            </select>
-            <label for="minute">Minute:</label>
-            <select id="minute" name="minute" required>
-                <option value="00">00</option>
-                <option value="15">15</option>
-                <option value="30">30</option>
-                <option value="45">45</option>
-            </select>
-            <label for="ampm">AM/PM:</label>
-            <select id="ampm" name="ampm" required>
-                <option value="AM">AM</option>
-                <option value="PM">PM</option>
-            </select>
-            <button type="submit">Convert</button>
-        </form>
-    </div>
-</body>
-</html> -->

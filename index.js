@@ -1,14 +1,17 @@
 const express = require('express');
 const moment = require('moment-timezone');
+const path = require('path');
 
 const app = express();
-app.set('view engine', 'ejs');
+// app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Route to handle form submission and time conversion
 app.post('/convert', (req, res) => {
     const { day, hour, minute, ampm } = req.body;
     
@@ -22,7 +25,8 @@ app.post('/convert', (req, res) => {
     // Convert PST to IST
     const timeIST = timePST.clone().tz('Asia/Kolkata').format('dddd, h:mm A');
 
-    res.render('result', { timePST: timePST.format('dddd, h:mm A'), timeIST });
+    // Pass data to the result.html file via query parameters
+    res.redirect(`/result.html?timePST=${encodeURIComponent(timePST.format('dddd, h:mm A'))}&timeIST=${encodeURIComponent(timeIST)}`);
 });
 
 
